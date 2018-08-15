@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="jar" basedir="." name="NumberToWord">
+	<property name="result.dir" location="./report"/>
+	<path id="class.path">
+		<pathelement location="bin" />
+		<pathelement location="lib/junit-4.12.jar"/>
+	</path>
+	<target name="makedir" >
+		<mkdir dir="bin" />
+		<mkdir dir="target" />
+		<mkdir dir="${result.dir}"/>
+	</target>
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="target" />
+		<delete dir="${result.dir}"/>
+	</target>
+	<target name="compile" depends="clean, makedir">
+		<javac srcdir="src" destdir="bin" debug="true" includeantruntime="false">
+			<classpath refid="class.path" />
+		</javac>
+		<javac destdir="target" debug="true" includeantruntime="false">
+			<src path="src"/>
+			<src path="test"/>
+			<classpath refid="class.path" />
+		</javac>
+		<copy file="test/input_file.txt" toDir="target"/>
+	</target>
+
+
+	<target name="jar" depends="clean, makedir, compile, test, report">
+		<jar destfile="num2word.jar"
+         basedir="bin"
+         includes="**/*.class">
+			<manifest>
+				<attribute name="Main-Class" value="com.mindtree.main.ConvertNumberMain" />
+			</manifest>
+		</jar>
+	</target>
+</project>
