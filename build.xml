@@ -23,8 +23,7 @@
 			<src path="src"/>
 			<src path="test"/>
 			<classpath refid="class.path" >
-				<pathelement location="./target"/>
-				 <pathelement location="lib/junit-4.12.jar"/>
+			
 			</classpath>
 		</javac>
 		<copy file="test/input_file.txt" toDir="target"/>
@@ -39,7 +38,7 @@
 				<batchtest  fork="true" todir="${result.dir}">
 				      <fileset dir="test">
 					<include name="**/*Test.java" />
-					
+					<include name="junit.jar"/>
 				      </fileset>
             			</batchtest>
 			 </junit>
