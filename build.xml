@@ -31,11 +31,13 @@
 				<classpath>
 				    <pathelement location="./target"/>
 				    <pathelement location="lib/junit-4.12.jar"/>
+				   <include name="**/junit-4.12.jar" />
 				</classpath>
 				 <formatter type="xml" />
 				<batchtest  fork="true" todir="${result.dir}">
 				      <fileset dir="test">
 					<include name="**/*Test.java" />
+					
 				      </fileset>
             			</batchtest>
 			 </junit>
