@@ -33,8 +33,8 @@
 				<classpath>
 				    <pathelement location="./target"/>
 				    <pathelement location="lib/junit-4.12.jar"/>
-					<fileset dir="lib">
-						<include name="junit-4.12.jar"/>
+					<fileset dir="test">
+						<include name="junit.jar"/>
 					</fileset>
 				</classpath>
 				 <formatter type="xml" />
