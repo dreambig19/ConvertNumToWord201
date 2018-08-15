@@ -29,7 +29,7 @@
 		<copy file="test/input_file.txt" toDir="target"/>
 	</target>
         	<target name="test" depends="compile">
-			<junit fork="true" forkmode="once">
+			<junit fork="true" forkmode="once" printsummary="yes">
 				<classpath>
 					<pathelement location="./target"/>
 				    <pathelement location="lib/junit-4.12.jar"/>
