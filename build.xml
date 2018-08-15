@@ -31,8 +31,8 @@
         	<target name="test" depends="compile">
 			<junit fork="true" forkmode="once" printsummary="yes">
 				<classpath>
-					<pathelement location="./target"/>
 				    <pathelement location="lib/junit-4.12.jar"/>
+										<pathelement location="./target"/>
 				</classpath>
 				 <formatter type="xml" />
 				<batchtest  fork="true" todir="${result.dir}">
