@@ -1,5 +1,5 @@
 package com.mindtree.test;
-
+import static org.junit.jupiter.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.BufferedReader;
