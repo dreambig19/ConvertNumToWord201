@@ -26,7 +26,20 @@
 		</javac>
 		<copy file="test/input_file.txt" toDir="target"/>
 	</target>
-
+        	<target name="test" depends="compile">
+			<junit fork="true" forkmode="once">
+				<classpath>
+				    <pathelement location="./target"/>
+				    <pathelement location="lib/junit-4.12.jar"/>
+				</classpath>
+				 <formatter type="xml" />
+				<batchtest  fork="true" todir="${result.dir}">
+				      <fileset dir="test">
+					<include name="**/*Test.java" />
+				      </fileset>
+            			</batchtest>
+			 </junit>
+	</target>
 
 	<target name="jar" depends="clean, makedir, compile, test, report">
 		<jar destfile="num2word.jar"
