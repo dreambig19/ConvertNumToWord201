@@ -33,7 +33,7 @@
          basedir="bin"
          includes="**/*.class">
 			<manifest>
-				<attribute name="Main-Class" value="com.mindtree.main.ConvertNumberMain" />
+				<attribute name="Main-Class" value="com.mindtree.main.NumberToWord" />
 			</manifest>
 		</jar>
 	</target>
