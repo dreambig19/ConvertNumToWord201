@@ -3,6 +3,8 @@
  */
 package com.mindtree.main;
 
+import java.util.logging.Logger;
+
 import com.mindtree.service.Numbers;
 
 /**
@@ -27,9 +29,9 @@ public class NumberToWord {
 			}
 			System.out.println("Exiting");
 		} catch (NumberFormatException e) {
-			System.err.println("Invalid argument passed. Please verify the arguments!!");
+			Logger.getAnonymousLogger("Invalid argument passed. Please verify the arguments!!");
 		} catch (Exception e) {
-			System.err.println("Invalid Number");
+			Logger.getAnonymousLogger("Invalid Number");
 		}
 	}
 
