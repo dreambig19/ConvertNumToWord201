@@ -42,25 +42,8 @@
             			</batchtest>
 			 </junit>
 	</target>
-<target name="report" depends="test">
-			<executiondata>
-				<file file="${result.dir}/exec"/>
-			</executiondata>
-			<structure name="JaCoCo Ant Example">
-				<classfiles>
-					<fileset dir="target"/>
-				</classfiles>
-				<sourcefiles encoding="UTF-8">
-					<fileset dir="src"/>
-					<fileset dir="test"/>
-				</sourcefiles>
-			</structure>
-			<html destdir="${result.dir}"/>
-			<csv destfile="${result.dir}/report.csv"/>
-			<xml destfile="${result.dir}/report.xml"/>
-	</target>
-	<target name="jar" depends="clean, makedir, compile, test, report">
-		<jar destfile="num2word.jar"
+	<target name="jar" depends="clean, makedir, compile, test">
+	<jar destfile="num2word.jar"
          basedir="bin"
          includes="**/*.class">
 			<manifest>
