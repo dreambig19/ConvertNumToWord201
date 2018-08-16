@@ -25,14 +25,13 @@ public class NumberToWord {
 				int number= Integer.parseInt(args[i]);
 				System.out.println(args[i]+"- "+ Numbers.getNumberToWord(number));
 			}
-			System.out.println("polling");
+			System.out.println("Exiting");
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
 			System.err.println("Invalid argument passed. Please verify the arguments!!");
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println("Error while converting number to word!!");
+			System.err.println("Invalid Number");
 		}
 	}
 
 }
+
