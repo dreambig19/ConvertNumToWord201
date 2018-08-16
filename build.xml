@@ -4,6 +4,7 @@
 	<path id="class.path">
 		<pathelement location="bin" />
 		<pathelement location="lib/junit-4.12.jar"/>
+		<pathelement location="lib/hamcrest-core-1.3.jar"/>
 	</path>
 	<target name="makedir" >
 		<mkdir dir="bin" />
@@ -32,7 +33,8 @@
 			<junit fork="true" forkmode="once" printsummary="yes">
 				<classpath>
 				    <pathelement location="lib/junit-4.12.jar"/>
-										<pathelement location="./target"/>
+				    <pathelement location="lib/hamcrest-core-1.3.jar"/>
+				    <pathelement location="./target"/>
 				</classpath>
 				 <formatter type="xml" />
 				<batchtest  fork="true" todir="${result.dir}">
