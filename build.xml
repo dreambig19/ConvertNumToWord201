@@ -27,7 +27,6 @@
 			
 			</classpath>
 		</javac>
-		<copy file="test/input_file.txt" toDir="target"/>
 	</target>
         	<target name="test" depends="compile">
 			<junit fork="true" forkmode="once" printsummary="yes">
