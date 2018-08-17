@@ -3,7 +3,6 @@
  */
 package com.mindtree.main;
 
-import java.util.logging.Logger;
 
 import com.mindtree.service.Numbers;
 
@@ -22,16 +21,21 @@ public class NumberToWord {
 			return;
 		}
 		
+		
 		try {
 			for (int i = 0; i < args.length; i++) {
 				int number= Integer.parseInt(args[i]);
-				System.out.println(args[i]+"- "+ Numbers.getNumberToWord(number));
+				if(number==0) {
+					System.out.println("Terminated");
+					System.exit(0);
+				}else {
+					System.out.println(args[i]+"- "+ Numbers.getNumberToWord(number));
+				}
 			}
-			System.out.println("Exiting");
 		} catch (NumberFormatException e) {
-			Logger.getAnonymousLogger("Invalid argument passed. Please verify the arguments!!");
+			System.err.println("Invalid argument passed. Please verify the arguments!!");
 		} catch (Exception e) {
-			Logger.getAnonymousLogger("Invalid Number");
+			System.err.println("Invalid Number");
 		}
 	}
 
